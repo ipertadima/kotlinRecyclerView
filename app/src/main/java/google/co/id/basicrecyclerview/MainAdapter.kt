@@ -33,17 +33,13 @@ class MainAdapter(val data: List<String>) : RecyclerView.Adapter<RecyclerView.Vi
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is ViewHolder -> {
-                holder.bindView(data[position])
-            }
-            is ViewHolder2 -> {
-                holder.bindView(data[position])
-            }
+            is ViewHolder -> holder.bindView(data[position])
+            is ViewHolder2 -> holder.bindView(data[position])
         }
     }
 
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val textMain = view.text_main?.let {
             it
         }
@@ -53,7 +49,7 @@ class MainAdapter(val data: List<String>) : RecyclerView.Adapter<RecyclerView.Vi
         }
     }
 
-    class ViewHolder2(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder2(view: View) : RecyclerView.ViewHolder(view) {
         private val textMain = view.text_main?.let {
             it
         }
